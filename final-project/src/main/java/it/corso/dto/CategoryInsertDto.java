@@ -2,19 +2,9 @@ package it.corso.dto;
 
 import it.corso.model.CategoryName;
 
-public class CategoryShowDto {
-
-	private int id;
+public class CategoryInsertDto {
 
 	private CategoryName categoryName;
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
 
 	public CategoryName getCategoryName() {
 		return categoryName;
