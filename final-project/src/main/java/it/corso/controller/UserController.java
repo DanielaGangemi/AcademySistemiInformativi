@@ -20,6 +20,7 @@ import it.corso.dto.UserRegistrationDto;
 import it.corso.dto.UserShowDto;
 import it.corso.model.Role;
 import it.corso.model.User;
+import it.corso.service.BlackListService;
 import it.corso.service.UserService;
 import jakarta.validation.Valid;
 import jakarta.ws.rs.Consumes;
@@ -31,6 +32,8 @@ import jakarta.ws.rs.Path;
 import jakarta.ws.rs.PathParam;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.QueryParam;
+import jakarta.ws.rs.container.ContainerRequestContext;
+import jakarta.ws.rs.core.HttpHeaders;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 
@@ -39,6 +42,9 @@ public class UserController {
 
 	@Autowired
 	private UserService userService;
+
+	@Autowired
+	private BlackListService blackList;
 
 	// 1. USER REGISTRATION
 	@POST
@@ -224,4 +230,29 @@ public class UserController {
 		return token;
 
 	}
+
+	// 7. LOGOUT
+	@GET
+	@Path("/logout")
+	public Response logout(ContainerRequestContext containerRequestContext) {
+		// si potrebbe utilizzare Redis per salvare le sessioni
+
+		try {
+
+			String authorizationHeader = containerRequestContext.getHeaderString(HttpHeaders.AUTHORIZATION);
+
+			String token = authorizationHeader.substring("Bearer".length()).trim();
+
+			blackList.invalidateToken(token);
+
+			return Response.status(Response.Status.OK).build();
+
+		} catch (Exception e) {
+
+			return Response.status(Response.Status.INTERNAL_SERVER_ERROR).build();
+
+		}
+
+	}
+
 }

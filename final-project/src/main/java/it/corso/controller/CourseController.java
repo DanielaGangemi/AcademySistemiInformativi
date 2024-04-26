@@ -24,7 +24,7 @@ public class CourseController {
 	private CourseService courseService;
 
 	@GET
-	@Path("/all")
+	@Path("")
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response getCourses() {
