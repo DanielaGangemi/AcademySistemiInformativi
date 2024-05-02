@@ -1,0 +1,23 @@
+.centerCard {
+
+    width: 25rem;
+    margin-top: 15%;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+body {
+    background: no-repeat center center fixed;
+    background-image: linear-gradient(blue, #00d8ff);
+}
+
+.rowMargin {
+    margin-bottom: 2%;
+}
+
+.centerTitle {
+
+    text-align: center;
+
+}

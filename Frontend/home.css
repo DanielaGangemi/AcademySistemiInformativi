@@ -1,0 +1,31 @@
+.navLink {
+    color: white!important;
+}
+
+h1{
+    margin-left: 3%;
+}
+
+table{
+    margin-left: 3%;
+    margin-right: 3%;
+}
+
+.contentMargin{
+
+    margin-top: 3%;
+
+}
+
+.searchMargin {
+    margin-left: 3%;
+}
+
+.searchMarginRight {
+    margin-right: 3%;
+}
+
+
+.hidden{
+    display: none;
+}
