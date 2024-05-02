@@ -97,7 +97,8 @@ public class UserServiceImpl implements UserService {
 
 			if (role.isPresent()) {
 
-				Role r = role.get();
+//				Role r = role.get();
+				Role r = new Role();
 
 				r.setId(userRegistrationDto.getRoleId());
 
