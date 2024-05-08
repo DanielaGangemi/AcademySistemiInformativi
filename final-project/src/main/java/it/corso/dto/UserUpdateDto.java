@@ -10,7 +10,7 @@ public class UserUpdateDto {
 	@Pattern(regexp = "[a-zA-Z\\s']{1,50}")
 	private String surname;
 
-	private String password;
+	private String email;
 
 	private int roleId;
 
@@ -30,12 +30,12 @@ public class UserUpdateDto {
 		this.surname = surname;
 	}
 
-	public String getPassword() {
-		return password;
+	public String getEmail() {
+		return email;
 	}
 
-	public void setPassword(String password) {
-		this.password = password;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	public int getRoleId() {

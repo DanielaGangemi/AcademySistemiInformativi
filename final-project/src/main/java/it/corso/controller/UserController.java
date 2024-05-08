@@ -18,6 +18,7 @@ import it.corso.dto.UserLoginRequestDto;
 import it.corso.dto.UserLoginResponseDto;
 import it.corso.dto.UserRegistrationDto;
 import it.corso.dto.UserShowDto;
+import it.corso.dto.UserUpdateDto;
 import it.corso.model.Role;
 import it.corso.model.User;
 import it.corso.service.BlackListService;
@@ -125,7 +126,7 @@ public class UserController {
 	@PUT
 	@Path("/update")
 	@Consumes(MediaType.APPLICATION_JSON)
-	public Response updateByEmail(UserRegistrationDto user) {
+	public Response updateByEmail(UserUpdateDto user) {
 
 		try {
 

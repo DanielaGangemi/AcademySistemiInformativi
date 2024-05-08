@@ -82,7 +82,7 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public void userUpdate(UserRegistrationDto userRegistrationDto) {
+	public void userUpdate(UserUpdateDto userRegistrationDto) {
 
 		User user = findByEmail(userRegistrationDto.getEmail());
 
@@ -90,7 +90,7 @@ public class UserServiceImpl implements UserService {
 
 			user.setName(userRegistrationDto.getName());
 			user.setSurname(userRegistrationDto.getSurname());
-			user.setPassword(DigestUtils.sha256Hex(userRegistrationDto.getPassword()));
+//			user.setPassword(DigestUtils.sha256Hex(userRegistrationDto.getPassword()));
 
 			List<Role> roleList = new ArrayList<>();
 			Optional<Role> role = roleDao.findById(userRegistrationDto.getRoleId());

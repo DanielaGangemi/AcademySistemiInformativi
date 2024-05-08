@@ -1,8 +1,6 @@
 package it.corso.dto;
 
-public class CourseShowDto {
-
-	private int id;
+public class CourseInsertDto {
 
 	private String courseName;
 
@@ -12,15 +10,7 @@ public class CourseShowDto {
 
 	private int duration;
 
-	private CategoryShowDto category;
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
+	private int categoryId;
 
 	public String getCourseName() {
 		return courseName;
@@ -54,12 +44,12 @@ public class CourseShowDto {
 		this.duration = duration;
 	}
 
-	public CategoryShowDto getCategory() {
-		return category;
+	public int getCategoryId() {
+		return categoryId;
 	}
 
-	public void setCategory(CategoryShowDto category) {
-		this.category = category;
+	public void setCategoryId(int categoryId) {
+		this.categoryId = categoryId;
 	}
 
 }
