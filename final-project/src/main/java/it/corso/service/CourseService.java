@@ -12,5 +12,7 @@ public interface CourseService {
 	CourseShowDto findById(int id);
 	
 	void insert(CourseInsertDto courseInsertDto);
+	
+	void delete(int id);
 
 }

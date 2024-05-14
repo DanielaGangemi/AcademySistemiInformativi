@@ -52,4 +52,13 @@ public class CourseServiceImpl implements CourseService {
 
 	}
 
+	@Override
+	public void delete(int id) {
+		
+		CourseShowDto courseShowDto = findById(id);
+		
+		courseDao.delete(mapper.map(courseShowDto, Course.class));
+		
+	}
+
 }

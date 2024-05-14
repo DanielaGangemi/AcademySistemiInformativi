@@ -28,6 +28,14 @@ function login() {
         }).then(async response => await response.json()) 
         .then(data => {
 
+            let token = {
+                token: data.token,
+                ttl: data.ttl,
+                tokenCreationTime: data.tokenCreationTime
+            }
+
+            sessionStorage.setItem(token)
+
             console.log(data)
             window.location.replace("./home.html?email=" + email)
         

@@ -13,6 +13,7 @@ import it.corso.jwt.JWTTokenNeeded;
 import it.corso.jwt.Secured;
 import it.corso.service.CourseService;
 import jakarta.ws.rs.Consumes;
+import jakarta.ws.rs.DELETE;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.POST;
 import jakarta.ws.rs.Path;
@@ -86,6 +87,25 @@ public class CourseController {
 		} catch (Exception e) {
 
 			return Response.status(Response.Status.BAD_REQUEST).build();
+		}
+
+	}
+	
+	@DELETE
+	@Path("/{id}")
+	@Consumes(MediaType.APPLICATION_JSON)
+	public Response deleteByEmail(@PathParam("id") int id) {
+
+		try {
+
+			courseService.delete(id);
+
+			return Response.status(Response.Status.OK).build();
+
+		} catch (Exception e) {
+
+			return Response.status(Response.Status.BAD_REQUEST).build();
+
 		}
 
 	}
